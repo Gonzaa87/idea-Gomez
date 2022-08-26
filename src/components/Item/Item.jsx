@@ -20,6 +20,7 @@ import {
     Text,
     Stack,
     Image,
+    Button,
   } from '@chakra-ui/react';
   
   
@@ -77,6 +78,9 @@ import {
               <Text fontWeight={800} fontSize={'xl'}>
                 ${price}
               </Text>
+              <Button>
+                + Info
+              </Button>
             </Stack>
           </Stack>
         </Box>
