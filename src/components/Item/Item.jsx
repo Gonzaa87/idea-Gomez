@@ -1,17 +1,4 @@
 import React from 'react'
-
-
-// export default function Item({id,title,price,stock}) {
-//   return (
-//     <div className="card-container">
-//         <h1>{id}</h1>
-//         <span>{title}</span>
-//         <span>{price}</span>
-//     </div>
-//   )
-// }
-
-
 import {
     Box,
     Center,
@@ -22,6 +9,7 @@ import {
     Image,
   } from '@chakra-ui/react';
   
+import {Link} from "react-router-dom";
   
   export default function Item({id,title,price,stock,img}) {
     return (
@@ -58,6 +46,7 @@ import {
                 filter: 'blur(20px)',
               },
             }}>
+            <Link to={`/item/${id}`}>
             <Image
               rounded={'lg'}
               height={230}
@@ -65,6 +54,7 @@ import {
               objectFit={'cover'}
               src={img}
             />
+            </Link>
           </Box>
           <Stack pt={10} align={'center'}>
             <Text color={'gray.500'} fontSize={'sm'} textTransform={'uppercase'}>
