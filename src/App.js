@@ -2,12 +2,13 @@ import Navbar from "./components/NavBar"
 import './App.css';
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+import Cart from "./components/Cart/Cart";
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 
-function App() {
-  const onAdd = (contador) => {
-    console.log("Soy onAdd y el valor del contador es:", contador)
-  }
+ function App() {
+  //      const onAdd = (contador) => {
+  //      console.log("Soy onAdd y el valor del contador es:", contador)
+  //  }
   return (
     <div className="App">
       <BrowserRouter>
@@ -16,6 +17,7 @@ function App() {
       <Route path="/" element={<ItemListContainer greeting="Este mensaje se está reproduciendo desde mi App.js"/>} />
       <Route path="/category/:categoryid" element={<ItemListContainer greeting="Este mensaje se está reproduciendo desde mi App.js"/>}/>
       <Route path="/item/:id" element={<ItemDetailContainer />} />
+      <Route path="/cart" element={<Cart />}/>
       </Routes>
       </BrowserRouter>
     </div>
