@@ -14,8 +14,8 @@ import {BrowserRouter, Routes, Route} from "react-router-dom"
       <BrowserRouter>
       <Navbar/>
       <Routes>
-      <Route path="/" element={<ItemListContainer greeting="Este mensaje se está reproduciendo desde mi App.js"/>} />
-      <Route path="/category/:categoryid" element={<ItemListContainer greeting="Este mensaje se está reproduciendo desde mi App.js"/>}/>
+      <Route path="/" element={<ItemListContainer greeting="Productos"/>} />
+      <Route path="/category/:categoryid" element={<ItemListContainer greeting="Productos"/>}/>
       <Route path="/item/:id" element={<ItemDetailContainer />} />
       <Route path="/cart" element={<Cart />}/>
       </Routes>

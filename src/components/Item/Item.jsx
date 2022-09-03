@@ -7,11 +7,13 @@ import {
     Text,
     Stack,
     Image,
+    Button,
   } from '@chakra-ui/react';
   
-import {Link} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
   
   export default function Item({id,title,price,stock,img}) {
+    const nav=useNavigate()
     return (
       <Center py={12} style={{margin: "10px"}}>
         <Box
@@ -46,7 +48,6 @@ import {Link} from "react-router-dom";
                 filter: 'blur(20px)',
               },
             }}>
-            <Link to={`/item/${id}`}>
             <Image
               rounded={'lg'}
               height={230}
@@ -54,7 +55,6 @@ import {Link} from "react-router-dom";
               objectFit={'cover'}
               src={img}
             />
-            </Link>
           </Box>
           <Stack pt={10} align={'center'}>
             <Text color={'gray.500'} fontSize={'sm'} textTransform={'uppercase'}>
@@ -67,6 +67,9 @@ import {Link} from "react-router-dom";
               <Text fontWeight={800} fontSize={'xl'}>
                 ${price}
               </Text>
+              <Button onClick={()=>nav(`/item/${id}`)} _hover={{bg: 'green.200',}}>
+                + info
+              </Button>
             </Stack>
           </Stack>
         </Box>

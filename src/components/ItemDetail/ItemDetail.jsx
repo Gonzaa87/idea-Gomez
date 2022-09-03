@@ -1,4 +1,4 @@
-import {Button} from '@chakra-ui/react'
+import {Button, Flex} from '@chakra-ui/react'
 import React, {useState} from 'react'
 import ItemCount from "../ItemCount/ItemCount"
 import {Link} from 'react-router-dom'
@@ -15,7 +15,7 @@ export function ItemDetail({item}) {
       console.log("Talle pedido= " + selectTalle);
     }
   return (
-    <div>
+    <Flex flexDirection={"column"} justifyContent={"center"}>
         <h1>{title} - {id}</h1>
         <img src={img}></img>
         <h3>${price}</h3>
@@ -30,6 +30,6 @@ export function ItemDetail({item}) {
         <Link to="/cart"><Button>Finalizar Compra</Button></Link> :
         <ItemCount initial={1} stock={5} onAdd={onAdd}/> }
 
-    </div>
+    </Flex>
   )
 }

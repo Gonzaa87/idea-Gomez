@@ -22,8 +22,11 @@ import {
 } from '@chakra-ui/icons';
 import Cartwidget from './Cartwidget/Cartwidget';
 
+import {useNavigate} from "react-router-dom";
+
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
+  const nav=useNavigate()
 
   return (
     <Box>
@@ -54,7 +57,8 @@ export default function Navbar() {
           <Text
             textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
             fontFamily={'heading'}
-            color={useColorModeValue('gray.800', 'white')}>
+            color={useColorModeValue('gray.800', 'white')}
+            onClick={()=>nav(`/`)}             >
             Sneakers GG
           </Text>
 
@@ -135,12 +139,12 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
       display={'block'}
       p={2}
       rounded={'md'}
-      _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}>
+      _hover={{ bg: useColorModeValue('green.100', 'gray.900') }}>
       <Stack direction={'row'} align={'center'}>
         <Box>
           <Text
             transition={'all .3s ease'}
-            _groupHover={{ color: 'pink.400' }}
+            _groupHover={{ color: 'green.400' }}
             fontWeight={500}>
             {label}
           </Text>
@@ -154,7 +158,7 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
           justify={'flex-end'}
           align={'center'}
           flex={1}>
-          <Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
+          <Icon color={'black.0'} w={5} h={5} as={ChevronRightIcon} />
         </Flex>
       </Stack>
     </Link>
@@ -162,13 +166,14 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
 };
 
 const MobileNav = () => {
+
   return (
     <Stack
       bg={useColorModeValue('white', 'gray.800')}
       p={4}
       display={{ md: 'none' }}>
       {NAV_ITEMS.map((navItem) => (
-        <MobileNavItem key={navItem.label} {...navItem} />
+        <MobileNavItem key={navItem.label} {...navItem}  />
       ))}
     </Stack>
   );
