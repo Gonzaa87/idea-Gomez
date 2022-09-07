@@ -1,10 +1,12 @@
 import {Button, Flex} from '@chakra-ui/react'
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import ItemCount from "../ItemCount/ItemCount"
 import {Link} from 'react-router-dom'
+import { CartContext } from '../context/CartContext';
 
 export function ItemDetail({item}) {
     const {id, price, title, img, talles} = item;
+    const {addItem} = useContext(CartContext);
     const [contador, setContador] = useState(0);
     const [selectTalle, setSelectTalle] = useState(talles[0])
 
@@ -13,6 +15,7 @@ export function ItemDetail({item}) {
       setContador(count)
 
       console.log("Talle pedido= " + selectTalle);
+      addItem(item, count);
     }
   return (
     <Flex flexDirection={"column"} justifyContent={"center"}>
