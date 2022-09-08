@@ -12,7 +12,7 @@ export function CartProvider({ children}) {
             console.log("soy duplicado")
             let aux = items;
             console.log(aux)
-            let itemIndex = aux.findeIndex((element) => element.id == item.id);
+            let itemIndex = aux.findIndex((element) => element.id == item.id);
             console.log( `mi index es ${itemIndex}`)
             aux[itemIndex].quantity += quantity;
             setItems([...aux])
@@ -24,8 +24,7 @@ export function CartProvider({ children}) {
     }
 
     function removeItem(itemId) {
-
-        //
+        setItems(items.filter((element) => element.id != itemId));
     }
 
     function clear() {
@@ -37,7 +36,7 @@ export function CartProvider({ children}) {
     }
 
     return (
-        <CartContext.Provider value={{ addItem, removeItem, items }}>
+        <CartContext.Provider value={{ addItem, removeItem, items, clear }}>
             {children}
         </CartContext.Provider>
     )
