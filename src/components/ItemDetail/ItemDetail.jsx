@@ -25,7 +25,7 @@ export function ItemDetail({item}) {
         <br />
         <div><h4>Talle :</h4>
         <select onChange={(e) => setSelectTalle(e.target.value)} value={selectTalle}>
-          {talles.map((talle)=> <option value={talle}>{talle}</option>)}
+          {talles.map((talle, index)=> <option key={index} value={talle}>{talle}</option>)}
         </select>
         </div>
         <br />
