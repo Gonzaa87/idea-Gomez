@@ -12,7 +12,7 @@ export default function Cart() {
     {!items.length ? <h2> No tengo items <Link to="/"><Button>Ir al inicio</Button></Link> </h2> :
       <>
         <ol>
-          {items.map (((item, index) => <li key={index}> {item.title} - {item.quantity} <Button onClick={() => removeItem(item.id)}>Remover</Button></li>))}
+          {items.map (((item, index) => <li key={index}> {item.name} - {item.quantity} <Button onClick={() => removeItem(item.id)}>Remover</Button></li>))}
         </ol>
         <h3>precio total = ${items.reduce((pv, cv) => pv + (cv.price * cv.quantity),0)}</h3>
       </>

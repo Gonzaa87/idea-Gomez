@@ -7,7 +7,7 @@ const ItemList = ({items}) => {
   return (
     <Flex flexDirection={"row"} justifyContent={"center"}>
         {items.map((item,index)=>
-       <Item key={index} id={item.id} title={item.title} price={item.price} img={item.img}/>
+       <Item key={index} id={item.id} title={item.title} price={item.price} imgsrc={item.imgsrc}/>
        )}
     </Flex>
   )

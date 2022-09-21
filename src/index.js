@@ -4,6 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ChakraProvider } from '@chakra-ui/react'
+import { initializeApp } from 'firebase/app';
+
+initializeApp({
+  apiKey: "AIzaSyCIHkipzP65nruK5gTaSGb81RFRjO6T7pA",
+  authDomain: "shoe-shop-gomez.firebaseapp.com",
+  projectId: "shoe-shop-gomez",
+  storageBucket: "shoe-shop-gomez.appspot.com",
+  messagingSenderId: "720649997513",
+  appId: "1:720649997513:web:914c953a72f00e8c509118"
+})
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

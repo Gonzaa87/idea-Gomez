@@ -5,29 +5,25 @@ import {Link} from 'react-router-dom'
 import { CartContext } from '../context/CartContext';
 
 export function ItemDetail({item}) {
-    const {id, price, title, img, talles} = item;
+    const {id, price, name, imgsrc} = item;
     const {addItem} = useContext(CartContext);
     const [contador, setContador] = useState(0);
-    const [selectTalle, setSelectTalle] = useState(talles[0])
+
 
     function onAdd(count) {
       console.log(`Esta es la cantidad de ITEMS que la persona va a comprar: ${count}`);
       setContador(count)
 
-      console.log("Talle pedido= " + selectTalle);
+
       addItem(item, count);
     }
   return (
     <Flex flexDirection={"column"} justifyContent={"center"}>
-        <h1>{title} - {id}</h1>
-        <img src={img}></img>
+        <h1>{name} - {id}</h1>
+        <img src={imgsrc}></img>
         <h3>${price}</h3>
         <br />
-        <div><h4>Talle :</h4>
-        <select onChange={(e) => setSelectTalle(e.target.value)} value={selectTalle}>
-          {talles.map((talle, index)=> <option key={index} value={talle}>{talle}</option>)}
-        </select>
-        </div>
+
         <br />
         {contador !== 0 ?
         <Link to="/cart"><Button>Finalizar Compra</Button></Link> :

@@ -12,7 +12,7 @@ import {
   
 import {useNavigate} from "react-router-dom";
   
-  export default function Item({id,title,price,stock,img}) {
+  export default function Item({id,name,price,stock,imgsrc}) {
     const nav=useNavigate()
     return (
       <Center py={12} style={{margin: "10px"}}>
@@ -39,7 +39,7 @@ import {useNavigate} from "react-router-dom";
               pos: 'absolute',
               top: 5,
               left: 0,
-              backgroundImage: {img},
+              backgroundImage: {imgsrc},
               filter: 'blur(15px)',
               zIndex: -1,
             }}
@@ -53,7 +53,7 @@ import {useNavigate} from "react-router-dom";
               height={230}
               width={282}
               objectFit={'cover'}
-              src={img}
+              src={imgsrc}
             />
           </Box>
           <Stack pt={10} align={'center'}>
@@ -61,7 +61,7 @@ import {useNavigate} from "react-router-dom";
               id:{id}
             </Text>
             <Heading fontSize={'2xl'} fontFamily={'body'} fontWeight={500}>
-              {title}
+              {name}
             </Heading>
             <Stack direction={'row'} align={'center'}>
               <Text fontWeight={800} fontSize={'xl'}>
