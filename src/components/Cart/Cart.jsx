@@ -19,6 +19,7 @@ export default function Cart() {
     }
       <div>
         <Button onClick={clear}>Limpiar carrito</Button>
+        <Link to="/checkout"><Button>CheckOut</Button></Link>
       </div>
     </>
   )
